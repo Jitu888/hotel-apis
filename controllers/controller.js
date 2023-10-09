@@ -33,7 +33,10 @@ exports.get_hotelList_by_cityName = async (req, res) => {
 }
 
 exports.get_specific_hotel_by_id = async (req,res)=>{
-
+    const result = hotels.findById({city:req.query.id})
+    if(result){
+       res.send(result)
+    }
 }
 
 
